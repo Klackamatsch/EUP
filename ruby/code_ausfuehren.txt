@@ -1,0 +1,13 @@
+ruby console 
+
+
+irb auf der console eingeben um die ruby console zu initialisieren.
+
+
+Textdatei:
+ Ruby code wird in einer Textdatei gespeichert.
+ die Datei sollte die Endung rb haben : start.rb
+
+ 	er Code in der Datei wird ausgeführt: 
+ 	cd verzeichnisinderdiecodedateiliegt
+ 	ruby start.rb

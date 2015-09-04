@@ -1,0 +1,25 @@
+soll auf der console eine Ausgabe erzeugt werden, geschiet das über den Befehl 
+puts<string>
+
+		puts irgendetwas    <--- Ausgabe einer Strings
+		puts "variablenname" <--- Ausgabe einer Variable in der ein String ist
+		zahl = 15
+		puts zahl.to_s
+
+
+Zusammen gesetzte Ausgabe:
+		Ausgeben eines Strings, der sich aus Text und dem Inhalt von Variablen zusammen setzt
+
+				tag ="Freitag"
+				puts "heute ist #{tag}, der #{Time.new}."
+
+				<---- am anfang und am Ende müssen doppelte Anführungszeichen stehen. innerhalb dieses Konstruktes #{} kann jeder ruby-Code ausgeführt werden. es findet automatisch eine Konvertierung des Ergebnisses in einen String statt
+
+
+Formatieren der Ausgabe:
+puts  "Die woche besteht aus :\n\tMontag \n\tDienstag \n\tMittwoch \n\tDonnerstag \n\tFreitag \n\tSamstag \n\tSonntag"
+
+													<----- \n fügt einen Zeilenumbruch hinzu
+													<----- \t fügt einen tabulatorschritt hinzu ( tabtaste drücken)
+
+

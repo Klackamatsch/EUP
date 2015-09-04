@@ -1,0 +1,7 @@
+
+
+3.times do 										 <---
+					puts "HURRA"         <--- ein block beginnt mit einem "do"und endet mit einem 
+																		"end" zwischen beiden können beliebig viele befehle  
+																		<---stehen
+						end								

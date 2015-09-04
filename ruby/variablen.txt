@@ -1,0 +1,25 @@
+zuweisung:
+
+variablen_Name = "dies ist ein -string"     <--- eine zuweisung erfolgt über den 
+																										zuweisungsoperator '"'
+																						<--- der variablentyp (string, integer, time, ....) erfolgt über die Eingabe
+Zeichenkette (String) :
+		str = "dies und 15 andere"
+				Ein String wird erzeugt, in dem eine beliebige Anzahl von Zeichen ( Zahlen, Buchstaben) innerhalb von anführungszeichen stehen (sowohl doppelte als auch einfache ).
+
+Zusammengesetzte Zeichenkette
+
+		tag = "Freitag"
+		str = "heute ist" +tag
+																						<--- das + verbindet zwei strings
+				das Ergebnis ist dann str %ENTER%  heute ist Ftreitag
+
+
+
+
+Ganze Zahl (Integer, Fixnum)
+		zahl = 15
+
+Float (Kommazahl) 
+
+		Komma_zahl = 13.44										
