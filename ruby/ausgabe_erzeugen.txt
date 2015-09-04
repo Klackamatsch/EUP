@@ -22,4 +22,9 @@ puts  "Die woche besteht aus :\n\tMontag \n\tDienstag \n\tMittwoch \n\tDonnersta
 													<----- \n fügt einen Zeilenumbruch hinzu
 													<----- \t fügt einen tabulatorschritt hinzu ( tabtaste drücken)
 
+zeichen escapen
+puts "anzeigen von \" muss das zeichen escaped werden"
+
+												<---- sollen bestimmte zeichen wie doppelte anführungszeichen oder einfache im text dargestellt werden, so muss ein backslash vor diesem zeichen stehen.
+
 
