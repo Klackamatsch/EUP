@@ -1,0 +1,32 @@
+wenn man eine methode auf eine Variable anwendet so ändert sich der wert der variable nicht dauerhaft, sondern nur für die eine methodenanwendung. schreibt man ein ausrufezeichen hinter die methode also string.reverse! so bleibt die änderung dauerhaft bestehen.
+
+
+
+Die Programmiersprache Ruby ist streng Klassen/Objekt-orientiert. Das bedeutet, dass eine Variable vom Datentyp INTEGER, Ganzzahl ein Objekt der Kalsse Fixnum ist, bzw eine Variable vom Datentyp String, Zeichenkette  ein Objekt der Klasse String.
+Die Klassen bieten für die Objekte Methoden an.
+
+var = "Teststring" 
+
+var.class
+					die Methode class gibt an welche klasse das objekt(die variable) hat.
+
+var.reverse
+					diese methode dreht den string um. der wert der variable ändert sich nciht dauerhaft nur für die eine ausgabe
+
+var.reverse! 
+					diese methode macht das gleiche aber diesmal bleibt dewr inhalt der variable dauerhaft bestehen.
+
+var.center(40) 
+					diese methode erwartet mindestens einen Parameter
+var.reverse.center(40)
+					methoden können kaskadiert werden. der wert der Variable wird umgedreht und anschließend in center gesetzt
+
+var.empty? 
+					hier wird etweder true oder false ausgegeben. um zu prüfen ob die variable leer ist oder nicht
+					die ausgabe nennt man boolean. methoden mit einem fragezeichen? am ende werfen grundsätzlich einen boolean aus
+
+
+
+
+
+

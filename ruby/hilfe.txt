@@ -1,0 +1,4 @@
+Consolenhilfe
+ri String
+
+Bei der Installation von Ruby wird eine hilfe mitinstalliert, die mit ri Klassennamen.Methodenname auf der Linuxconsole aufgerufen wird. 
