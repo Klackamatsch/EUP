@@ -28,5 +28,5 @@ Float (Kommazahl)
 																wenn man eine methode auf eine Variable anwendet so ändert sich der wert der variable nicht dauerhaft, sondern nur für die eine methodenanwendung. schreibt man ein ausrufezeichen hinter die methode also string.reverse! so bleibt die änderung dauerhaft bestehen.
 
 
-	
+	.downcase.capitalize <----- downcase schriebt alles klein und capitalize schreibt die ersten buchstaben eines wortes immer groß
 

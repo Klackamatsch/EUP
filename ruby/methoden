@@ -1,0 +1,33 @@
+Methoden
+		DRY: Dont repeat yourself
+				 Jeder Befehl, oder Codesequenz, die mehr als einmal aufgerufen wird, wird in eine methode ausgelagert.
+
+				 Definition:
+				 		def methoden_name
+
+				 				code
+				 		end
+
+				 <---- die definition beginnt mit einem <def> und endet mit einem <end>
+
+				 Aufruf: 
+				 		eine Methode wird ausgeführt, wenn der Name der methode im Hauptprogramm genannt wird.
+
+				 Rückgabewert
+				 		In ruby gibt jede Methode den letzten berechneten Wert der Methode zurück.
+
+
+				 Variablendefinition
+				 		
+				 		Variablen, die INNERHALB einer Methode verwendet werdenb, gelten NUR INNERHALB dieser Methoden. (zwischen def und end)
+
+				 Parameter
+				 		Eine Methode kann Parameter verarbeiten, indem nach dem Methodennamen in Klammern Variablen definiert werden.
+				 			def movie_listing(title)
+				 						<--- title ist eine lokale, d.h. nur in einer Methode gültige Variable, mit der in der Methode gearbeitet werden kann.
+				 				bei Aufruf der MEthode muss ein Wert mitgegeben werden.
+				 			movie_listing("Ninja Turtles")
+				 		
+
+
+
