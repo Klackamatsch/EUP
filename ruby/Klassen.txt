@@ -45,8 +45,35 @@
 								def title
 								@title
 								end
-				nun kann ich mit dem Objekt auf die Eigenschaft title zugreifen: 
-						object1.title
+		nun kann ich mit dem Objekt auf die Eigenschaft title zugreifen: 
+										object1.title
+
+						dafür gibt es nun auch eine kurzform (shortcut)  <------ getter methode
+
+										attr_reader :title
+
+		möchte ich von außen auf die Eigenschaft title zugreifen, dann ist ein writer nötig
+							def title=(parameter)
+								@title = parameter.capitalize
+								end
+
+										attr_writer :title    							<-------setter methode
+
+		Nun kann für diese Eigenschaft ein neuer Wert zugewiesen werden
+
+								object1.title ="neuer Wert"
+
+		kurzkurzform
+
+							wenn sowohl ein reader als auch ein writer benötigt wird 
+
+												attr_accessor :title
+
+
+
+
+
+
 
 
 
