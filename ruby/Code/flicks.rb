@@ -1,6 +1,13 @@
 class Movie
-	
-
+				#def title=(ptitle)
+				#@title = ptitle
+				#end
+					attr_writer :title # attr_writer ersetzt die oberen 3 zeilen
+				# def title
+				# 	@title
+				# end
+				attr_reader :title   # attr_reader macht das selbe wie die methode über dem hier
+				attr_accessor :title
 	def initialize(ptitle,prank=0)
 			puts"neues Objekt"
 			@title = ptitle.capitalize
@@ -23,31 +30,26 @@ class Movie
 			"#{@title} hat ein Ranking von: #{@rank}."
 	
 		end
-		# def title
-		# 	@title
-			
-		# end
-attr_reader :title   # attr_reader macht das selbe wie die methode über dem hier
-
-#def title=(ptitle)
-	#@title = ptitle
 	
-#end
 
-attr_writer :title # attr_writer ersetzt die oberen 3 zeilen
+
 
 end
 
 movie1 = Movie.new('Ninja Turtles',4)
-puts movie1.to_s
-movie1.thumbs_up
-puts movie1.to_s
-movie1.Thumbs_down
-puts movie1.to_s
+movie2 = Movie.new('american Horror Story',1)
+movie3 = Movie.new('8mm',3)
+movie4 = Movie.new('Kifferjoe',5)
 
-puts movie1.title
+movies = [movie1, movie2, movie3, movie4]
 
-movie1.title= "ninja purples"
+movies.each do |movie|
+	movie.thumbs_up
+	#movie.thumbs_down
+	puts movie
+	end
+
+movie1.title= "ninja purples"   # der attr_accessor sorgt dafür, dass diese zeile verändern kann
 puts movie1
 
 
