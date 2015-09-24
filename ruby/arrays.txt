@@ -1,0 +1,27 @@
+DEFINITION:
+	variable = ["Inhalt1","Inhalt2",1,2,3]
+
+	variable = Array.new  # danach (((((variable << "wert1" ))))))
+
+	variable = %w(eins zwei drei)
+				kurzform wenn nur strings übergeben werden sollen
+
+Werte eingeben:
+
+	variable << 'vier'
+	variable.push('fuenf')
+
+Methoden:
+	
+	variable.size 					#gibt anzahl der elemente aus
+	variable.pop						# entfernt letzten eintrag
+	variable.empty?					# ist die variable leeer? gibt true false aus
+	variable.reverse				# dreht den inhalt um
+	variable.sort 					# sortiert zahlenwerte 
+	variable.include?('zwei')  				#ist der wert "zwei" im array drin? true false
+
+Ausgabe:
+	
+	variable[0]       # der erste Wert wird ausgegeben
+	
+

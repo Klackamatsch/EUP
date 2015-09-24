@@ -6,19 +6,23 @@
 
 
 class Calculator
-
+attr_accessor :zahl1
+attr_accessor :zahl2
 			def initialize(zahl1,zahl2)
 					@zahl1 = zahl1
 					@zahl2 = zahl2 
 			end
 
+
 			def add
+				#@erg = @zahl1 + @zahl2
+				#puts "das Ergebnis lautet#{@erg}"
 			puts	"die Summe aus #{@zahl1} und  #{@zahl2} ergibt #{@zahl1 + @zahl2}" 
 					
 				end
 
 			def substract		
-					@zahl1 - @zahl2
+					puts "die differenz aus #{@zahl1} und  #{@zahl2} ergibt #{@zahl1 - @zahl2}"
 				end
 def to_s
 			"die Summe aus #{@zahl1} und  #{@zahl2} ergibt " 
@@ -37,4 +41,7 @@ def to_s
 	end
 aufgabe = Calculator.new(5,4)
 
+aufgabe.add
+aufgabe.substract
+aufgabe.zahl1 = 10
 aufgabe.add

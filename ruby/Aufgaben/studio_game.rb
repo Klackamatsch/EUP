@@ -11,23 +11,43 @@
 #		moe
 #h. speichern sie die Namen der Spieler in Variablen und geben Sie diese erneut wie abgebildet aus
 
-name1 = "larry"
-name2 = "curly"
-name3 = "moe"
-health= 60
+class Player
 
-puts "#{name1}'s health is #{health*3}"
-
-puts name1+"'s" + " health is " + health.to_s 
-
-puts "#{name1}'s health is #{health/9.00}"
-puts "#{name1}'s health is #{health/9}"
-puts "#{name1}'s health is #{health/9.to_f}"
-
-puts "Players :\n\tlarry \n\tcurly \n\tmoe"
-
-puts "Players :\n\t#{name1} \n\t#{name2} \n\t#{name3}"
+		def initialize(pname, phealth = 100)
+			@name = pname
+			@health = phealth
+		end
 
 
 
+
+		 def to_s
+ 				"Ich bin #{@name} mit einem Wert von #{@health}"
+ 			end
+
+ 			def blam
+ 				@health -= 10
+ 				puts "#{@name} wurde um 10 geblamt!!! Aktueller stand:#{@health}"
+ 			end
+						def w00t
+								@health += 10
+								puts "#{@name} wurde um 10 gew00ted aktueller Stand: #{@health}"
+						end
+
+end
+
+
+
+player1 = Player.new('theo',5)
+player2 = Player.new('Peter')
+players = [player1,player2]
+
+players.each do |var|
+	puts var
+end
+
+players.size.times do |i|
+	puts i.to_s
+	puts players [i]
+end
 

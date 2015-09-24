@@ -1,3 +1,30 @@
+class Playlist
+
+	def initialize(name)
+		@name = name
+		@movies = []
+	end
+	def add_movie(movie)
+				@movies << movie
+				
+	end
+	def to_s
+			 @movies.size.to_s
+	
+	end
+
+	def play
+			puts "#{@name}'s Playlist"
+			@movies.each do |movie|
+				puts movie
+			end
+	end
+	
+	
+
+end
+
+
 class Movie
 				#def title=(ptitle)
 				#@title = ptitle
@@ -28,6 +55,7 @@ class Movie
 
 	def to_s
 			"#{@title} hat ein Ranking von: #{@rank}."
+
 	
 		end
 	
@@ -40,17 +68,21 @@ movie1 = Movie.new('Ninja Turtles',4)
 movie2 = Movie.new('american Horror Story',1)
 movie3 = Movie.new('8mm',3)
 movie4 = Movie.new('Kifferjoe',5)
-
+pl = Playlist.new("sarah")
+pl.add_movie(movie1)
+puts pl
 movies = [movie1, movie2, movie3, movie4]
+pl.add_movie(movie2)
+pl.play
 
-movies.each do |movie|
-	movie.thumbs_up
-	#movie.thumbs_down
-	puts movie
-	end
+# movies.each do |movie|
+# 	movie.thumbs_up
+# 	#movie.thumbs_down
+# 	puts movie
+# 	end
 
-movie1.title= "ninja purples"   # der attr_accessor sorgt dafür, dass diese zeile verändern kann
-puts movie1
+# movie1.title= "ninja purples"   # der attr_accessor sorgt dafür, dass diese zeile verändern kann
+# puts movie1
 
 
 
