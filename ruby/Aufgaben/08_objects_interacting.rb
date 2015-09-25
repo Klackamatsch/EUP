@@ -26,6 +26,7 @@ class Game
 	attr_accessor :players
 		def initialize(title)
 			@title = title
+			@players = []
 		
 		end
 
@@ -35,18 +36,29 @@ class Game
 		end
 
 		def to_s
-			"#{@title}"
+			"#{@title} #{@players}"
 			
 		end
 
+		def play
+			puts "there are #{@players.count} players in #{@title} "
+		 		@players.each do |dings|
+		 		dings.to_s
+		 		end
+
+		 		@players.each do |bums|
+		 			bums.blam
+		 			2.times do 
+		 				bums.w00t
+		 		end
+		 		bums.to_s
+		 		end
+
+		end
 		
 
 
 	end
-pl = Game.new("zack mc cracken")
-
-
-puts pl
 
 
 
@@ -63,7 +75,7 @@ attr_accessor :name, :health, :score
 
 
 		 def to_s
- 				"Ich bin #{@name} mit einer Gesundheit von #{@health} und einem Score von #{@score}"
+ 				puts "Ich bin #{@name} mit einer Gesundheit von #{@health} und einem Score von #{@score}"
  			end
 
  			def blam
@@ -75,10 +87,7 @@ attr_accessor :name, :health, :score
 								puts "#{@name} wurde um 10 gew00ted aktueller Stand: #{@health}"
 						end
 
-						def play
-			puts "there are #{@players.count} players in #{@title} (#{@players})"
-			puts "Iḿ #{@players} "
-		end
+					
 
 end
 
@@ -87,8 +96,16 @@ end
 player1 = Player.new('Moe',5)
 player2 = Player.new('Larry',200,1)
 player3= Player.new('Curly',100,2)
-players = [player1,player2,player3]
 
-players.each do |var|
-	puts var
-end
+
+
+
+pl = Game.new("zack mc cracken")
+pl.add_player(player1)
+pl.add_player(player2)
+pl.add_player(player3)
+
+
+pl.play
+
+
