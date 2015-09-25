@@ -18,7 +18,7 @@ class Player
 
 		def to_s
  				"Ich bin #{@name} mit einem Wert von #{@health}"
- 				
+ 				@health + @name.length
 
  			end
 

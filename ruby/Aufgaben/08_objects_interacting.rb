@@ -44,15 +44,15 @@ class Game
 			puts "there are #{@players.count} players in #{@title} "
 		 		@players.each do |dings|
 		 		dings.to_s
-		 		end
+		 									end
 
-		 		@players.each do |bums|
-		 			bums.blam
-		 			2.times do 
-		 				bums.w00t
-		 		end
-		 		bums.to_s
-		 		end
+		 		@players.each	 do |bums|
+		 				bums.blam
+		 												2.times do 
+		 													bums.w00t
+		 																end
+		 				bums.to_s
+		 									end
 
 		end
 		
@@ -74,18 +74,18 @@ attr_accessor :name, :health, :score
 
 
 
-		 def to_s
+		def to_s
  				puts "Ich bin #{@name} mit einer Gesundheit von #{@health} und einem Score von #{@score}"
- 			end
+ 		end
 
- 			def blam
+ 		def blam
  				@health -= 10
  				puts "#{@name} wurde um 10 geblamt!!! Aktueller stand:#{@health}"
- 			end
-						def w00t
+ 		end
+		def w00t
 								@health += 10
 								puts "#{@name} wurde um 10 gew00ted aktueller Stand: #{@health}"
-						end
+		end
 
 					
 
