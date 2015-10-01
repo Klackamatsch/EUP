@@ -116,3 +116,74 @@ end
 
 # hash={}
 # array.size.times {|i| hash = hash[array[i], rand(100) +100]; puts"#{hash}"}
+
+
+# 2. Worte
+# a. Bilde ein Array mit den Worten: Pflaume, Bauschaum, Auster
+# b. Alle Element, die den String aus enthalten sollen ausgegeben werden.
+# c. erzeugen eine Ausgabe nach der Länge der Worte von klein nach groß
+# d. Ein Hash wird ausgegeben, das Wort als Index, die Anzahl der Buchstaben als Wert
+
+
+
+# 2. Worte
+# a. Bilde ein Array mit den Worten: Pflaume, Bauschaum, Auster
+puts "2a----"
+puts worte = %w(Pflaume Bauschaum Auster)
+puts "\n"
+# b. Alle Element, die den String aus enthalten sollen ausgegeben werden.
+puts "b----"
+suche = "aus"
+worte.size.times do |i|
+	puts worte[i] if worte[i].include?(suche)
+end
+puts "\n"
+# c. erzeugen eine Ausgabe nach der Länge der Worte von klein nach groß
+puts "c----"
+puts worte.sort_by(&:length)
+puts "\n"
+# d. Ein Hash wird ausgegeben, das Wort als Index, die Anzahl der Buchstaben als Wert
+puts "d----"
+worte.size.times do |i|
+	puts wh = { worte[i] => worte[i].length }
+end
+puts "\n"
+# 3. Lottogenerator:
+# a. Schreiben Sie einen kleinen Lottozahlengenerator. Es sollen 7 Zahlen aus 49 Möglichkeiten in einem Array ausgegeben werden.
+puts "3a----"
+lotto = []
+7.times do
+	lotto << rand(49)
+end
+puts lotto
+puts "\n"
+# b. Peter, Paul und Mary bilden einen Hash, etwa derart: lotto = { "Peter" => [ 2,22,33,11,23,32,26 ], ...}
+puts "b----"
+namen = ["Peter", "Paul", "Mary"]
+namen.size.times do |i|
+	lotto = []
+	7.times do
+		lotto << rand(49)
+	end
+	lh = { namen[i] => lotto }
+	puts lh
+end
+puts "\n"
+# 4. Vergleich:
+# str_1 = "Programmieren, Federball, Whisky"
+# str_2 = "Fussball, Bier, Programmieren"
+# Die Ausgabe lautet:
+# ergebnis = { :diff => ["Federball", "Whisky", "Fussball", "Bier"], :match => ["Programmieren"]}
+puts "4----"
+str_1 = "Programmieren, Federball, Whisky, Bier"
+str_2 = "Fussball, Bier, Programmieren"
+str1 = str_1.scan(/\w+/)
+str2 = str_2.scan(/\w+/)
+str1.size.times do |i|
+	if (str2.include? str1[i]) == true
+		diff = (str1 - str2) + (str2 - str1)
+		# puts "ergebnis = { :diff #{diff}, :match [\"#{str1[i]}\"] }"
+		ergebnis = { :diff => diff, :match => str1[i] }
+		puts "ergebnis = #{ergebnis}"
+	end
+end
