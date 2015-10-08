@@ -16,10 +16,23 @@ class Playlist
 	def play
 			puts "#{@name}'s Playlist"
 			@movies.each do |movie|
+				case roll_die
+					when 1..2
+						movie.thumbs_down
+						puts "#{movie.title }wurde gedowned"
+					when 3..4
+						puts "#{movie.title }wurde nix gemacht"
+					else
+						movie.thumbs_up
+						puts "#{movie.title }wurde geupt"
+				end
 				puts movie
 			end
 	end
-	
+	def roll_die
+		rand(1..6)
+		
+	end
 	
 
 end
@@ -40,13 +53,21 @@ class Movie
 			@title = ptitle.capitalize
 			@rank = prank
 		end
+def hit?
+			if @rank >= 10
+				true
+			else
+				false
+			end
+			
+		end
 
 	def thumbs_up
 		@rank += 1
 		#@rank = @rank +1
 		end
 
-	def Thumbs_down
+	def thumbs_down
 			@rank -= 1
 			#@rank = @rank - 1
 
@@ -58,16 +79,38 @@ class Movie
 
 	
 		end
-	
+	def status
+		if hit? 
+			"hit"
+		else
+			"flop"
+		end
+		
+	end
+
+	# def status
+	# 	if hit? ? "hit" : "flop"			
+	# 	end
+	# end
 
 
 
 end
 
+
+
+
+
+
+
 movie1 = Movie.new('Ninja Turtles',4)
-movie2 = Movie.new('american Horror Story',1)
+puts movie1.status
+movie2 = Movie.new('american Horror Story',11)
+puts movie2.status
 movie3 = Movie.new('8mm',3)
-movie4 = Movie.new('Kifferjoe',5)
+puts movie3.status
+movie4 = Movie.new('Kifferjoe',10)
+puts movie4.status
 pl = Playlist.new("sarah")
 pl.add_movie(movie1)
 puts pl
