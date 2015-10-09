@@ -23,11 +23,24 @@ puts kunde1.huhu
 kredit1 = Kredit.new(kunde1.huhu)
 
 
-puts "STEP 5 *******************************************************\n"
+puts "STEP 5 **********************************************************\n"
 puts kredit1
-
 kredit1.jahresgehalt = 24000
-puts "STEP 6 ********************************************************\n"
+
+puts "STEP 6 **********************************************************\n"
+
 puts kredit1.gehalt
+
+puts "STEP 7 **********************************************************\n"
+
+kredit1.kreditsumme = 5000
+
+puts kredit1.gehalt
+
+puts "STEP 8 **********************************************************\n"
+
+
+kredit1.kreditvergabe
+
 
 
