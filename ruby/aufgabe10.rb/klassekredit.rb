@@ -35,7 +35,8 @@ class Kredit
 
 	end
 		def abzahlung(monate)
-			
+			rate = (@kreditsumme / monate)
+			puts "bei der Rückzahlung des Kredits in der Höhe von #{@kreditsumme} EURO innerhalb von #{monate} ist eine Rate von #{rate} notwendig"
 		end
 
 
