@@ -1,0 +1,14 @@
+auf der bash des Betriebssystems könnnen folgende Befehle ausgeführt werden:
+
+rails generate
+rails g controller <events>
+		# legt einen Controller, d.h. eine Datei mit dem namen events_controller.rb im Verzeichnis app/controllers an, mit einer KlAAW MIT DEM namen EventController
+		# Zusätzlich wird im app/view- Verzeichnis ein Verzeichnis events angelegt
+
+		rails destroy
+		rails d controller <events>
+		#löscht die Controller Datei und das Verzeichnis und alle weiteren vorher angelegten Dateien
+
+		rails server
+		rails s
+		#startet einen Webserver, der dem port 3000 lauscht.
