@@ -1,0 +1,26 @@
+<h1>Events</h1>
+
+
+ <%= "<h2>listing generated at:  #{Time.now}</h2>".html_safe %>
+ 
+
+
+ <p>
+ 	<table>
+ 		<tr>
+ 			<th>Name</th>
+ 			<th>Ort</th>
+ 			<th>Preis</th>
+ 		</tr>
+
+ 		<% @events.each do |event| %>
+ 		<tr>
+ 			<th><%= event.name %></th>
+ 			<th><%= event.location %></th>
+ 			<th><%= number_to_currency(event.price, unit: "€") %></th>
+
+ 		</tr>
+ 		<% end %>
+ 		
+ 	</table>
+ </p>

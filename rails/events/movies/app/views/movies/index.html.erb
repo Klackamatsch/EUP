@@ -1,0 +1,21 @@
+<h1>Movies</h1>
+
+
+
+<table>
+ 		<tr>
+ 			<th>title</th>
+ 			<th>Rank</th>
+ 			<th>Umsatz</th>
+ 		</tr>
+
+ 		<% @movies.each do |movie| %>
+ 		<tr>
+ 			<th><%= movie.title %></th>
+ 			<th><%= movie.rating %></th>
+ 			<th><%= number_to_currency(movie.total_gross, unit: "€") %></th>
+
+ 		</tr>
+ 		<% end %>
+ 		
+ 	</table>

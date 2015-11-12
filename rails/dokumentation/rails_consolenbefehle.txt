@@ -1,3 +1,6 @@
+rails new <appname>
+	#erstellt ein neues Projekt
+
 auf der bash des Betriebssystems könnnen folgende Befehle ausgeführt werden:
 
 rails generate
@@ -5,10 +8,19 @@ rails g controller <events>
 		# legt einen Controller, d.h. eine Datei mit dem namen events_controller.rb im Verzeichnis app/controllers an, mit einer KlAAW MIT DEM namen EventController
 		# Zusätzlich wird im app/view- Verzeichnis ein Verzeichnis events angelegt
 
-		rails destroy
-		rails d controller <events>
+rails destroy
+rails d controller <events>
 		#löscht die Controller Datei und das Verzeichnis und alle weiteren vorher angelegten Dateien
 
-		rails server
-		rails s
+rails g model event name:string location:string price:decimal
+		#im projekt wird eine Klasse event/ angelegt in der Datei app/models/event.rb
+			im Ordner db/migrate/ wird eine MigrationDatei angelegt, die die befehle zum erstellen einer Tabelle in der DATENBANK ENTHÄLT.
+
+
+rails server
+rails s
 		#startet einen Webserver, der dem port 3000 lauscht.
+
+rails s -p3001
+ 	#portänderung
+
