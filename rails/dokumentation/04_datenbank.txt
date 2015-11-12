@@ -25,7 +25,7 @@ Speichern des Datensatzes
 
 Suchen/finden
 	Event.find(1)    <---- sucht einen Datensatz mit der Id 1 (sofern bekannt)
-	Event.find_y(name: "blub")    <----- sucht die zeile wo der name "blub ist"
+	Event.find_by(name: "blub")    <----- sucht die zeile wo der name "blub ist"
 
 Datensatz verändern
 
