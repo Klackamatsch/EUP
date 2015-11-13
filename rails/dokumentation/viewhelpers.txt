@@ -1,0 +1,46 @@
+Ein Rails Prinzip ist es, auf der Darstellungsebende möglichst wenig ruby code zu verwenden.
+Dafür stellt reils den viewhelper al sinstrument zur verfügung.
+Es gibt einiger Standardhelper, z.b.: 
+truncate 								# schneidet einen String ab
+content_tag 						# erzeugt einen html tag    	content_tag(:strong, "FREE")
+number_to_currency			# formatiert eine Zahl
+
+Es gibt allerdings auch die Möglichkeit eigene helper zu schreiben.
+Beispiel:
+
+a. Aufruf im View
+***************************************************************************************
+<th><%= format_price(event) %></th>
+
+
+b. Definition im app/helpers/application_helper.rb:
+
+*******************************************************************************************
+module ApplicationHelper
+
+	def format_price(event)
+		if
+	event.free? 
+	#"<strong>Free</strong>".html_safe
+	content_tag(:strong, "FREE")
+		else
+	 number_to_currency(event.price, unit: "€")       # aus der view in den helper free ist im concerns event rb!!!
+		end																							# dieser code ist die verlängerung der format_price
+	end																								# kommt aus der view . da drin ist ein free? das wird n concerns event.rb genutzt
+end
+*********************************************************************************************
+in concerns/event.rb
+
+
+**********************************************************************************************
+
+event.rb
+class Event < ActiveRecord::Base
+
+	def free?
+		self.price.blank? || self.price.zero?     # das kommt aus dem helper 
+		
+	end
+end
+*****************************************************************************************
+

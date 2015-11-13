@@ -6,7 +6,7 @@
 
 
  <p> Zeige folgende <%= @events.size %>  an: </p>
- 	<p>
+
  	<table width= 100% border= 2pt>
  		<tr>
  			<th>Name</th>
@@ -20,12 +20,12 @@
  		<tr>
  			<th><%= event.name %></th>
  			<th><%= event.location %></th>
- 			<th><%= format_price(event) %></th>
- 			<th><%= event.start_at %></th>
+ 			<th><%= format_price(event) %></th>  <!--format price ist im helper deklariert. look! -->
+ 			<th><%= event.start_at  %></th> <!--wichtig! man braucht die if abfrage weil start at nicht bei leeren werten geht -->
  			<th><%= truncate(event.description, length: 25, seperator: '') %></th>
 
  		</tr>
  		<% end %>
  		
  	</table>
- </p>
+ 

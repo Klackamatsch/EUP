@@ -42,4 +42,25 @@ item.update( start_at: 100.days.from_now, description:"blablavlablablabla")
 
 event.price.zero? ? "FREE"     # prüft ob der inhalt gleich null ist und wenn ja dann schreibt er FREE
 
+event.price.zero? ? "FREE" : number_to_currency(event.price, unit: "€")
+ #### verbindet das obrige mit einem weiteren befehl. wenn true dann FREE ansonsten wandle die zahl in euros um
 
+wird in den helper ausgelagert
+def format_price(event)
+		if
+	event.price.zero? 
+	"FREE" 
+		else
+	 number_to_currency(event.price, unit: "€")
+		end
+	end
+wird in der view benutzt 
+<th><%= format_price(event) %></th>
+
+
+
+man kann eine Datei im Config bereich im ordner initializers erstellen um zeitformate zu deklarieren
+dort legt man eine datei an :
+time_formats.rb
+drin steht
+Time::DATE_FORMATS[:default] = "%d. %b .%y --> %T"
