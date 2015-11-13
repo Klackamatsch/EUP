@@ -7,6 +7,8 @@
  			<th>title</th>
  			<th>Rank</th>
  			<th>Umsatz</th>
+ 			<th>Kinostart</th>
+ 			<th>Beschreibung</th>
  		</tr>
 
  		<% @movies.each do |movie| %>
@@ -14,6 +16,8 @@
  			<th><%= movie.title %></th>
  			<th><%= movie.rating %></th>
  			<th><%= number_to_currency(movie.total_gross, unit: "€") %></th>
+ 			<th><%= movie.kinostart %></th>
+ 			<th><%= movie.description %></th>
 
  		</tr>
  		<% end %>

@@ -24,3 +24,22 @@ rails s
 rails s -p3001
  	#portänderung
 
+
+ 	rails g migration AddFieldsToEvents start_at:date time description:text
+
+ 	rake db:migrate
+
+ 	item = Events.find(1)
+
+ 	item.update(start_at: 100.days.from_now, description: "halli hallo. frau merkel. blalalala")
+
+Event.find(1)
+item.update( start_at: 100.days.from_now, description:"blablavlablablabla")
+
+
+<%= truncate(event.description, length: 25, seperator: '') %> <------- schneidet nach 25 zeichen ab
+
+
+event.price.zero? ? "FREE"     # prüft ob der inhalt gleich null ist und wenn ja dann schreibt er FREE
+
+

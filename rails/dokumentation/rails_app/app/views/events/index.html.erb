@@ -5,19 +5,24 @@
  
 
 
- <p>
- 	<table>
+ <p> Zeige folgende <%= @events.size %>  an: </p>
+ 	<p>
+ 	<table width= 100% border= 2pt>
  		<tr>
  			<th>Name</th>
  			<th>Ort</th>
  			<th>Preis</th>
+ 			<th>wann</th>
+ 			<th>Beschreibung</th>
  		</tr>
 
  		<% @events.each do |event| %>
  		<tr>
  			<th><%= event.name %></th>
  			<th><%= event.location %></th>
- 			<th><%= number_to_currency(event.price, unit: "€") %></th>
+ 			<th><%= format_price(event) %></th>
+ 			<th><%= event.start_at %></th>
+ 			<th><%= truncate(event.description, length: 25, seperator: '') %></th>
 
  		</tr>
  		<% end %>
