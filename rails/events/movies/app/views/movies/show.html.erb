@@ -1,0 +1,15 @@
+<h1><%= @movie.title %></h1>
+<hr>
+<p> <strong>Beschreibung: </strong><%= @movie.description %> </p>
+<hr>
+<p> <strong>Wann</strong> <br>
+ <%= time_ago_in_words(@movie.kinostart) %></p>
+<hr>
+<p><strong>Rank </strong><br>
+ <%=@movie.rating %></p>
+<hr>
+<p><strong>Umsatz</strong> <br>
+ <%= @movie.total_gross %></p>
+<hr>
+
+<%= link_to "Back", movies_path %> 

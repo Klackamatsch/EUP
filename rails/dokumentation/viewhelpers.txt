@@ -53,3 +53,7 @@ Die Verlinkung wird in Rails über den link_to -Helper realisiert
 
 		produziert den HTML-Code:
 		a href="/events"> Alle Anezigen</a>
+
+
+
+		

@@ -1,10 +1,10 @@
 <h1>Events</h1>
 
 
- <!--<%= "<h2>listing generated at:  #{Time.now}</h2>".html_safe %>  -->
+<%= "<h2>listing generated at:  #{Time.now}</h2>".html_safe %>  
  
 
-
+<p><%= link_to "Neues Event erstellen", new_event_path %></p>
 
 
  	<table width= 100% border= 2pt>
@@ -16,6 +16,7 @@
  			<th>Beschreibung</th>
  			<th> Show </th>
  			<th> EDIT </th>
+ 			<th> Löschen </th>
  		</tr>
 
  		<% @events.each do |event| %>
@@ -27,8 +28,9 @@
  			<td><%= truncate(event.description, length: 25, seperator: '',omission: "") %>
  				<%= link_to "...", event_path(event.id) %></td>
 
- 			<td><%= link_to "Show", event_path(event.id)%> </td>
+ 			<td> <%= link_to "Show", event_path(event.id)%> </td>
  			<td> <%= link_to "Edit", edit_event_path(event.id)%> </td>
+ 			<td> <%= link_to "delete", event_path(event.id), method: :delete, data: {confirm: "Sicher???"} %></td>
  
  	 </tr>
  		<% end %>
