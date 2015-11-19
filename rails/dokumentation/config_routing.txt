@@ -5,3 +5,32 @@ Beispiel: Deusches Datumsdormat
 config/initialize/time_formats.rb :
 Time::DATE_FORMATS[:default] = "%d. %b .%y --> %T"
 
+
+
+Das Routing wird von Rails mit der Datei routes.rb im Verzeichnis config geregelt.
+
+Es ist möglich jeden einzelnen Pfad zu benennen
+
+	get 'events/:id' => 'events#show'
+		#wenn es einen Browseraufruf:"server/events/5" gibt, dann gehe in den eventscontroller und dort in die show action
+
+Wenn man dieses Vorgehen wählt, muss man aber jede einzelne Route angeben. Kompfortabler und sinnvoller ist es Rails eine Resource bilden zu lassen. 
+Dies geschieht mit dem Befehl:
+	
+	resources :events
+
+nun stehen alle standardaktionen dieses Controllers zur Verfügung.
+
+im Hintergrund erstellt Rails nun Methode, die eine Pfadangabe generieren.
+
+Beispiel: 
+		event_path(5)
+	erstellt den HTML-Code:
+				
+	<a href="/events/5">Show </a>
+
+Mit dem Consolenbefehl
+		rake routes
+kann man Routen anzeigen lassen
+
+

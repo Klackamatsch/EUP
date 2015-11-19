@@ -1,10 +1,10 @@
 <h1>Movies</h1>
 
+ <p> Es sind  <%= @movies.count == 1 ?  "ist " : "sind" %> <%= "#{pluralize(@movies.count, "Movie")}" %> vorhanden </p>
 
-
-<table>
+<table border= 1pt width= 100%>
  		<tr>
- 			<th>title</th>
+ 			<th>Titel</th>
  			<th>Rank</th>
  			<th>Umsatz</th>
  			<th>Kinostart</th>
@@ -13,11 +13,11 @@
 
  		<% @movies.each do |movie| %>
  		<tr>
- 			<th><%= movie.title %></th>
- 			<th><%= movie.rating %></th>
- 			<th><%= number_to_currency(movie.total_gross, unit: "€") %></th>
- 			<th><%= movie.kinostart %></th>
- 			<th><%= movie.description %></th>
+ 			<td><%= movie.title %></td>
+ 			<td><%= movie.rating %></td>
+ 			<td><%= format_total_gross(movie) %></th>
+ 			<td><%= time_ago_in_words(movie.kinostart) %></td>
+ 			<td><%= truncate(movie.description, lenght:40) %></td>
 
  		</tr>
  		<% end %>
