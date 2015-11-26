@@ -41,7 +41,9 @@
  			<td><%= movie.title %></td>
  			<td><%= movie.rating %></td>
  			<td><%= format_total_gross(movie) %></th>
- 			<td><%= time_ago_in_words(movie.kinostart) %></td>
+ 			<td><%= time_ago_in_words(movie.kinostart) %>
+ 				<%= movie.kinostart %>
+ 			</td>
  			<td><%= truncate(movie.description, lenght:40) %></td>
 
  			<td> <%= link_to "Show", movie_path(movie.id)%> </td>
