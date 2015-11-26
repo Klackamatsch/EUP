@@ -1,4 +1,23 @@
-<h1>Movies</h1>
+
+
+
+<div class="panel ">
+<div class="row">
+	<div class="medium-4 columns">
+			
+	</div>
+	<div class="medium-8 columns">
+		
+	<h1>Movies</h1>
+	</div>
+</div>
+</div>
+
+
+
+
+
+
 
  <p> Es sind  <%= @movies.count == 1 ?  "ist " : "sind" %> <%= "#{pluralize(@movies.count, "Movie")}" %> vorhanden </p>
 <p><%= link_to "Neuen Film erstellen", new_movie_path %></p>

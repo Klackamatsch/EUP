@@ -36,10 +36,7 @@ def show
 		@movie.destroy
 		redirect_to movies_url		
 	end
-	def self.upcoming
-	where("kinostart <= ? ", Time.now).order("kinostart")
-		
-	end
+	
 	private
 	def movie_params
 		permitted_params = params.require(:movie).permit(:title, :description, :rating, :total_gross, :kinostart)

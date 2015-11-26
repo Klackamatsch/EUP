@@ -1,28 +1,65 @@
 <%= form_for(@movie) do |f|%>
-
-<p>
-	<%= f.label :title %>
+<!-- ***********************************************************************************-->
+<div class="row">
+	<div class="medium-2 columns">
+		<%= f.label :title%>
+	</div>
+	<div class="medium-10 columns">
+	
 	<%= f.text_field :title %>
-</p>
-<p>
-	<%= f.label :rating %>
+	</div>
+</div>
+<!-- ***********************************************************************************-->
+<div class="row">
+	<div class="medium-2 columns">
+		<%= f.label :rating %>
+	</div>
+	<div class="medium-10 columns">
+	
 	<%= f.number_field :rating %>
-</p>
-<p>
-	<%= f.label :total_gross %>
+	</div>
+</div>
+<!-- ***********************************************************************************-->
+<div class="row">
+	<div class="medium-2 columns">
+		<%= f.label :total_gross %>
+	</div>
+	<div class="medium-10 columns">
+	
 	<%= f.number_field :total_gross %>
-</p>
-<p>
-	<%= f.label :kinostart %>
+	</div>
+</div>
+<!-- ***********************************************************************************-->
+<div class="row">
+	<div class="medium-2 columns">
+		<%= f.label :kinostart %>
+	</div>
+	<div class="medium-10 columns">
+	
 	<%= f.datetime_select :kinostart %>
-</p>
-<p>
-	<%= f.label :description %>
+	</div>
+</div>
+<!-- ***********************************************************************************-->
+<div class="row">
+	<div class="medium-2 columns">
+		<%= f.label :description %>
+	</div>
+	<div class="medium-10 columns">
+	
 	<%= f.text_area :description %>
-</p>
-<p><%= f.submit %></p>
-
-<p> <%= link_to "Back without saving", movies_path %> </p>
+	</div>
+</div>
+<!-- ***********************************************************************************-->
+<div class="row">
+	<div class="medium-2 columns">
+		<%= f.submit %>
+	</div>
+	<div class="medium-10 columns">
+	
+	<%= link_to "Back without saving", movies_path %> 
+	</div>
+</div>
+<!-- ***********************************************************************************-->
 
 
 <%end%>

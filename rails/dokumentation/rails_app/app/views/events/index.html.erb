@@ -1,12 +1,23 @@
-<h1>Events</h1>
 
 
-<%= "<h2>listing generated at:  #{Time.now}</h2>".html_safe %>  
+
  
 
+
+<div class="panel ">
+<div class="row">
+	<div class="medium-4 columns">
+			  
+
+	</div>
+	<div class="medium-8 columns">
+		<h1>Events</h1>
+	
+	</div>
+</div>
+</div>
 <p><%= link_to "Neues Event erstellen", new_event_path %></p>
-
-
+<p><%= "listing generated at:  #{Time.now}".html_safe %></p>
  	<table width= 100% border= 2pt>
  		<tr>
  			<th>Name</th>
