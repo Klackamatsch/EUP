@@ -5,6 +5,11 @@ class EventsController < ApplicationController
 		
 	end
 
+	def showall
+		@events = Event.all
+		
+	end
+
 	def show
 
 		@event = Event.find(params[:id])
