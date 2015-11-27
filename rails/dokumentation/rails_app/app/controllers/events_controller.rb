@@ -33,8 +33,11 @@ class EventsController < ApplicationController
 
 		
 		@event = Event.new(event_params)
-		@event.save
+		if @event.save
 		redirect_to event_path(@event.id)
+	else
+			render "new"
+	end
 		
 	end
 	def destroy
@@ -45,7 +48,7 @@ class EventsController < ApplicationController
 
 	private
 	def event_params
-		permitted_params = params.require(:event).permit(:name, :description, :location, :price, :start_at)
+		permitted_params = params.require(:event).permit(:name, :description, :location, :price, :start_at, :capacity, :image_file)
 	end
 
 

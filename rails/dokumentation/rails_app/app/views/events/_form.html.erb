@@ -1,5 +1,15 @@
 <%= form_for(@event) do |f|%>
-
+	<% if @event.errors.any? %>
+	<div class="panel">
+		<ul>
+			<% @event.errors.full_messages.each do |m| %>
+			<li>
+				<%= m %>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
 <div class="row">
 	<div class="medium-2 columns">
 		<%= f.label :name %>
@@ -9,6 +19,7 @@
 	<%= f.text_field :name %>
 	</div>
 </div>
+
 <!-- ***********************************************************************************-->
 <div class="row">
 	<div class="medium-2 columns">
@@ -16,7 +27,7 @@
 	</div>
 	<div class="medium-10 columns">
 		
-	<%= f.text_field :location %>
+	<%= f.text_field :location, placeholder: "wo findet der Spaß stadt?"%>
 	</div>
 </div>
 <!-- ***********************************************************************************-->
@@ -26,19 +37,40 @@
 	</div>
 	<div class="medium-10 columns">
 			
-	<%= f.number_field :price %>
+	<%= f.number_field :price, placeholder: "was kostet der Spaß?"%>
 	</div>
 </div>
 <!-- ***********************************************************************************-->
+<div class="row">
+	<div class="medium-2 columns">
+		<%= f.label :capacity %>
+	</div>
+	<div class="medium-10 columns">
+	
+	<%= f.number_field :capacity, placeholder: "Kapazität"%>
+	</div>
+</div>
+<!-- ***********************************************************************************-->
+
 <div class="row">
 	<div class="medium-2 columns">
 		<%= f.label :start_at %>
 	</div>
 	<div class="medium-10 columns">
 		
-	<%= f.datetime_select :start_at %>
+	<%= f.datetime_select :start_at, placeholder: "Wann geht der Spaß los?" %>
 	</div>
 </div>
+
+<!-- ***********************************************************************************-->
+<div class="row">
+	<div class="medium-2 columns">
+		<%= f.label :image_file%>
+	</div>
+	<div class="medium-10 columns">
+	
+	<%= f.text_field :image_file, placeholder: "Gif,jpeg,png einfügen" %>
+	</div>
 <!-- ***********************************************************************************-->
 <div class="row">
 	<div class="medium-2 columns">
@@ -46,7 +78,7 @@
 	</div>
 	<div class="medium-10 columns">
 		
-	<%= f.text_area :description %>
+	<%= f.text_area :description, placeholder: "Was geht da ab??" %>
 	</div>
 </div>
 <!-- ***********************************************************************************-->
@@ -58,6 +90,9 @@
 		
 	<%= link_to "Back without saving", events_path %>
 	</div>
+</div>
+
+
 </div>
 
 <!-- ***********************************************************************************-->

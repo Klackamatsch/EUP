@@ -25,6 +25,8 @@
  			<th>Preis</th>
  			<th>wann</th>
  			<th>Beschreibung</th>
+ 			<th>Kapazität</th>
+ 			<th>Bild</th>
  			<th> Show </th>
  			<th> EDIT </th>
  			<th> Löschen </th>
@@ -38,7 +40,8 @@
  			<td><%= event.start_at  %></td> <!--wichtig! man braucht die if abfrage weil start at nicht bei leeren werten geht -->
  			<td><%= truncate(event.description, length: 25, seperator: '',omission: "") %>
  				<%= link_to "...", event_path(event.id) %></td>
-
+ 			<td><%= event.capacity %></td>
+ 			<td><%= event.image_file %></td>
  			<td> <%= link_to "Show", event_path(event.id)%> </td>
  			<td> <%= link_to "Edit", edit_event_path(event.id)%> </td>
  			<td> <%= link_to "delete", event_path(event.id), method: :delete, data: {confirm: "Sicher???"} %></td>
