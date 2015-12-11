@@ -1,0 +1,47 @@
+<div class="panel ">
+<div class="row">
+	<div class="medium-4 columns">
+			  
+
+	</div>
+	<div class="medium-8 columns">
+		<h1>Alle Projekte</h1>
+	
+	</div>
+</div>
+</div>
+<p><%= link_to "neues Projekt anlegen", new_project_path %></p>
+<p><%= "listing generated at:  #{Time.now}".html_safe %></p>
+ 	<table width= 100% border= 2pt>
+ 		<tr>
+ 			<th>Name</th>
+ 			<th>Beschreibung</th>
+ 			<th>gewünschter umsatz</th>
+ 			<th>Website</th>
+ 			<th>Ende der Spenden</th>
+ 	
+ 			<th> Show </th>
+ 			<th> EDIT </th>
+ 			<th> Löschen </th>
+ 		</tr>
+
+ 		<% @fundraisings.each do |project| %>
+ 		<tr>
+ 			<td><%= project.name %></td>
+ 			<td><%= truncate(project.description, length: 25, seperator: '',omission: "") %>
+ 				<%= link_to "...", project_path(project.id) %></td>
+ 			<td><%= project.target_pledge_ammount %></td>  <!--format price ist im helper deklariert. look! -->
+ 			<td><%= project.website %></td>
+ 			<td><%= project.pledging_ends_on %></td>
+ 			
+ 			<td> <%= link_to "Show", project_path(project.id)%> </td>
+ 			<td> <%= link_to "Edit", edit_project_path(project.id)%> </td>
+ 			<td> <%= link_to "delete", project_path(project.id), method: :delete, data: {confirm: "Sicher???"} %></td>
+ 
+ 	 </tr>
+ 		<% end %>
+ 		
+ 	</table>
+
+
+ 

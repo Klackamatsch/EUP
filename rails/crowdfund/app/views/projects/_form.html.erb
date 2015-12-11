@@ -1,0 +1,63 @@
+<%= form_for(@fundraising) do |f|%>
+
+<div class="row">
+	<div class="medium-2 columns">
+		<%= f.label :name %>
+	</div>
+	<div class="medium-10 columns">
+	
+	<%= f.text_field :name %>
+	</div>
+</div>
+
+<!-- ***********************************************************************************-->
+<div class="row">
+	<div class="medium-2 columns">
+		<%= f.label :description %>
+	</div>
+	<div class="medium-10 columns">
+		
+	<%= f.text_field :description, placeholder: "Beschreibung"%>
+	</div>
+</div>
+<!-- ***********************************************************************************-->
+<div class="row">
+	<div class="medium-2 columns">
+		<%= f.label :website %>
+	</div>
+	<div class="medium-10 columns">
+			
+	<%= f.number_field :website, placeholder: "website"%>
+	</div>
+</div>
+<!-- ***********************************************************************************-->
+<div class="row">
+	<div class="medium-2 columns">
+		<%= f.label :pledging_ends_on %>
+	</div>
+	<div class="medium-10 columns">
+	
+	<%= f.datetime_select :pledging_ends_on, placeholder: "Kapazität"%>
+	</div>
+</div>
+<!-- ***********************************************************************************-->
+
+
+<!-- ***********************************************************************************-->
+<div class="row">
+	<div class="medium-2 columns">
+			<%= f.submit %>
+	</div>
+	<div class="medium-10 columns">
+		
+	<%= link_to "Back without saving", projects_path %>
+	</div>
+</div>
+
+
+</div>
+
+<!-- ***********************************************************************************-->
+
+
+<%end%>
