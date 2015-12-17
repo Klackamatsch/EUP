@@ -1,0 +1,18 @@
+unter validations versteht man in Rails die Überprüfung eines Formularfeldes auf :
+- Anwesenheit 
+- Richtigkeit des Eintrags( Email, Datum ,)
+-
+
+
+Eine Validation wird im Model definiert. 
+
+Bsp: 
+	models/event.rb
+	validates :name, presence: true
+	# sobald ein Speichervorgang in der Datenbank initiiert wird, wird überprüft ob für die Spalte "name" ein Wert gesetzt wird. Falls keiner vorhanden ist wird der Speichervorgang abbgebrochen und ein Fehler zurückegeben. 
+
+	#Validates gehen ausschließlich um da sSpeichern von Spalteneingaben!!!!
+
+
+
+validates :image_file, allow_blank: true, format: {with: /\w+\.(gif|jpg|png)\z/i, message: "falsches Dateiformat"}

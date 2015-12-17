@@ -18,6 +18,7 @@ def show
 		@movie = Movie.find(params[:id])
 		@movie.update(movie_params)
 		redirect_to movie_path(@movie.id)
+		flash[:notice] = "updated!"
 	end
 	def new
 		@movie = Movie.new
@@ -29,12 +30,14 @@ def show
 		@movie = Movie.new(movie_params)
 		@movie.save
 		redirect_to movie_path(@movie.id)
+		flash[:notice] = "created!"
 		
 	end
 	def destroy
 		@movie = Movie.find(params[:id])
 		@movie.destroy
-		redirect_to movies_url		
+		redirect_to movies_url	
+		flash[:notice] = "deleted!"	
 	end
 	
 	private

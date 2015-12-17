@@ -22,8 +22,12 @@ class EventsController < ApplicationController
 	end
 	def update
 		@event = Event.find(params[:id])
-		@event.update(event_params)
+		if @event.update(event_params)
 		redirect_to event_path(@event.id)
+		flash[:notice] = "gut gespeichert ist halb gewonnen"
+	else 
+		render "new"
+	end
 	end
 	def new
 		@event = Event.new
@@ -34,6 +38,7 @@ class EventsController < ApplicationController
 		
 		@event = Event.new(event_params)
 		if @event.save
+			flash[:notice] = "gut gespeichert ist halb gewonnen"
 		redirect_to event_path(@event.id)
 	else
 			render "new"

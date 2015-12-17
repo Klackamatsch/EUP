@@ -1,0 +1,7 @@
+Erstellen Die eine neue Recource review mit den PSalten:
+name:string, stars:integer, comment:text
+
+
+Erstellen sIE Validations für das review-model
+
+legen sie auf der Console einen review an, verbinden diesen mit einem Movie und testen SIe die Beziehung

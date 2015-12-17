@@ -1,0 +1,5 @@
+Hash schreibweise
+
+a. :key => "Wert"
+
+b. key: "Werte"

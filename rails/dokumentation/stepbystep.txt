@@ -1,0 +1,7 @@
+
+
+
+validates :name, presence: true
+				prüft ob etwas eingetragen wurde ins formular. also es MUSS in der spalte name ein eintrag passiert sein, damit true zurück gegeben wird. und der vorgang erfolgreich wird.
+
+	
