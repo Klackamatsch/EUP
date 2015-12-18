@@ -26,7 +26,7 @@ class EventsController < ApplicationController
 		redirect_to event_path(@event.id)
 		flash[:notice] = "gut gespeichert ist halb gewonnen"
 	else 
-		render "new"
+		render "new" , alert:"du penner bist dumm"
 	end
 	end
 	def new
@@ -41,7 +41,7 @@ class EventsController < ApplicationController
 			flash[:notice] = "gut gespeichert ist halb gewonnen"
 		redirect_to event_path(@event.id)
 	else
-			render "new"
+			render "new" , alert:"du penner bist dumm"
 	end
 		
 	end

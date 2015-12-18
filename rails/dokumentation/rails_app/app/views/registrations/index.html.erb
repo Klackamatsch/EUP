@@ -20,8 +20,9 @@
 <td><%= registration.event_id  %></td>
 <td>	</td>
 <td>	</td>
-<td>	</td>
+<td>	<%= link_to "Delete", events_path(@event.id), class:"alert button "%></td>
 </tr>
 <%end%>
    </table> <br>
-   <%= link_to "Back", event_path(@event.id), type:"button", class:"button succsess"%>
+   <%= link_to "Back", event_path(@event.id), class:"success button "%>
+    

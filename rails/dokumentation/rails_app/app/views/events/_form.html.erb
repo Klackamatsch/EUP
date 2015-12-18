@@ -1,15 +1,5 @@
 <%= form_for(@event) do |f|%>
-	<% if @event.errors.any? %>
-	<div class="panel">
-		<ul>
-			<% @event.errors.full_messages.each do |m| %>
-			<li>
-				<%= m %>
-			</li>
-			<% end %>
-		</ul>
-	</div>
-	<% end %>
+	<%= render "shared/error" , obj_errors: @event%>
 <div class="row">
 	<div class="medium-2 columns">
 		<%= f.label :name %>
@@ -84,11 +74,11 @@
 <!-- ***********************************************************************************-->
 <div class="row">
 	<div class="medium-2 columns">
-			<%= f.submit %>
+			<%= f.submit "submit", class:"success button"%>
 	</div>
 	<div class="medium-10 columns">
 		
-	<%= link_to "Back without saving", events_path %>
+	<%= link_to "Back without saving", events_path, class:"secondary button" %>
 	</div>
 </div>
 

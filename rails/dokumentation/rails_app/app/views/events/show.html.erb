@@ -1,8 +1,5 @@
 
 
-<div class="panel flash">
-	<%= flash[:notice] %>
-</div>
 
 <div class="row">
 	<div class="medium-3 columns">
@@ -77,15 +74,10 @@
 </div>
 <!-- ***********************************************************************************-->
 <!-- ***********************************************************************************-->
-<div class="row">
-	<div class="medium-2 columns">
-			<%= link_to "Back", events_path, type:"button", class:"button succsess" %> <br>
-			<%= link_to "registrierungen", event_registrations_path(@event.id), type:"button", class:"button succsess" %>
-	</div>
-	<div class="medium-10 columns">
-		
+	<ul class = "button-group ">
+			<li><%= link_to "Zurück", events_path, class:"secondary button " %> </li>
+			<li><%= link_to "alle Registrierungen", event_registrations_path(@event.id), class:"success button " %> </li>
+			<li><%= link_to "neue Registirerung", new_event_registration_path(@event.id), class:"warning button " %></li>
+		</ul>
 	
-	</div>
-</div>
-
-
+	
