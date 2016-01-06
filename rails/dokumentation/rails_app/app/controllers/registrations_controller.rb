@@ -15,7 +15,7 @@ class RegistrationsController < ApplicationController
 			
 			redirect_to event_path(@event.id), notice: "Registrierung erfolgreich"
 		else
-			render "new", alert:"du penner bist dumm"
+			render "new"
 		end
 		
 	end
