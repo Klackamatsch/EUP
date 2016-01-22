@@ -10,4 +10,3 @@ new.html.erb
 <%= render "form" %>
 #Der Rails Interpreter sucht auf der gleichen Verzeichnisebene nach einer Datei mit dem namen:
 _form.html.erb
-

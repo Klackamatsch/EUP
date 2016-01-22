@@ -1,0 +1,26 @@
+<%# navigation styled for Zurb Foundation 5 %>
+<nav class="top-bar" data-topbar>
+ 
+  <div class="top-bar-section">
+    <ul>
+      
+      <li><%= link_to 'Events', events_path %> </li>
+      <li><%= link_to 'Users', users_path %> </li>
+      <li>test4</li>
+    </ul>
+
+    	<ul>
+    		<div class="right">
+    			<% if current_user %>
+    			<li> <%= link_to current_user.name, edit_user_path(current_user.id) %> </li>
+    			<li> <%= link_to "logout", logout_path %> </li>
+    			<% else %>
+    			<li ><%= link_to "Registrieren", signup_path %></li> |
+    			<li ><%= link_to 'Einloggen', signin_path %></li>
+    			<% end %>
+    		</div>
+    	</ul>
+
+
+  </div>
+</nav>

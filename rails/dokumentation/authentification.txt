@@ -1,0 +1,88 @@
+Rails bringt die die Vorraussetzungen für eine Authentifizierung mit.
+Anlegen eines Users
+
+1. Aktivieren Sie in der Datei Gemfile das Gem 'bcrypt -> 3.1.7.' indem sie die Kommentarzeichen entfernen.
+2. Im Model, das für die Authentification verwendet wird, in unserem beispiel: USER, (kann auch anders heißen), ist die Angabe
+
+class User| Active Record: ::Base
+has_secure_password
+
+nötig.
+
+Damit stehen in diesem Model verschiedene Methoden zur Verschlüsselung und zur Authentifizierung zur Verfügung.
+3.ein zentrales Attribut in dem Model ist 'password'
+Das ist beim Anlegen zu berücksichtigen:
+
+	rails g model user email password:digest
+
+In jedem Fall muss in der Migration für das Feld attribut die Zeile stehen:
+
+	t.string :password_digest
+Dieser Eintrag sorgt dafür, dass in Kombination mit 'has secure password' der Passworteintrag in der Tabelle verschlüsselt wird.
+
+4.Das Formular zm anlegen eines Users enthält zwei Texfelder für das Passwort:
+
+<div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+Authentifizierung:
+Neben dem Model für die Accounts wird ein Controller 'Sessions' angelegt, in dem die authentifizierung statt findet. Der Controller hat eine actio für das LoginFormular (new Action) , eine (create Action) für das Überprüfen der LoginDaten und eine (destroy Action) für das AUsloggen.
+
+rails g controller sessions new
+
+Für die Authentifizierung wird eine Methode von bcrypt (user.authenticate(password))verwendet. 
+Wir haben eine Klassenmethde von User mit dem Namen authenticate geschrieben, die wir im Controller aufrufen.
+
+def self.authentificate(email, password)
+	user = user.find_by(:email => email)
+	user && user.authenticate(password)
+	end
+
+bei einem Fehlschlagen der Authentifizierung wird in das LoginFenste rzurück geleitet. 
+Bei einem erfolgreichen Authentifizieren wird eine Session Variable angelegt.
+
+	session[:user_id] = user.id
+
+Diese SessionVariable wird bei jedem aufruf im application Controller überprüft:
+
+	def current_user
+  		#session[:user_id] = nil 
+  		@current_user = User.find(session[:user_id]) if session[:user_id]
+  	
+  	end
+ 	 helper_method :current_user
+
+Beim Logout eines Userswird diese Session zerstört:
+	def destroy
+	Session[:user_id] = nil
+
+	end
+
+	Überprüfung der Authentifizierung im Controller
+	Um den Zugriff eines Users zu beschränken kann im Controller eine Abfrage durchgeführt werden, ob der User eingeloggt ist.
+			def require_signin
+  	unless current_user
+  		redirect_to signin_path, alert: "erst einlogen, dann wohlfühlen"
+  	
+  	end
+	end
+
+Wenn die Variable ( helper) current_user nicht gefüllt ist, dann bedeutet das , dass der USer nicht angemeldet ist.
+Er wird dann zum LoginFenster umgeleitet. 
+
+Beispiel: 
+Damit nur ein eingeloggter User andere User sehen kann, aber dennoch das Anlegen eines neuen Users möglich ist, steht in dem Users Controller:
+
+before_action :require_signin, except: [:new, :create]
+
+before_action: vor jeder weiteren Activität wird diese Methode ausgeführt
+:require_signin --> die von uns im application_controller definierte Methode wird ausgeführt
+
+except: [:new, :create] --> Die actions zum Anlegen eines neuen Users new und create werden ausgenommen.
+

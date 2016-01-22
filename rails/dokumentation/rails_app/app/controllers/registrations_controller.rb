@@ -1,8 +1,13 @@
 class RegistrationsController < ApplicationController
 	before_action :set_event
 	def index
-
-		@registrations =@event.registrations
+		@event = Event.find(params[:event_id])
+		@registrations = @event.registrations
+		
+	end
+	def show
+		#@registration = Registrations.find(params[:registration_id])
+		@registration = Registration.find(params[:id])
 		
 	end
 	def new

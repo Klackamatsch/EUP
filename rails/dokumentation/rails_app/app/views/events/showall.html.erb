@@ -35,7 +35,7 @@
  			<td><%= truncate(event.description, length: 25, seperator: '',omission: "") %>
  				<%= link_to "...", event_path(event.id) %></td>
  			<td><%= event.capacity %></td>
- 			<td><%= event.image_file %></td>
+ 			<td><%= truncate(event.image_file, length: 25, seperator: '', omission: "") %><%= link_to "...", event_path(event.id) %> </td>
  			<td> <%= link_to "Show", event_path(event.id)%> </td>
  			<td> <%= link_to "Edit", edit_event_path(event.id)%> </td>
  			<td> <%= link_to "delete", event_path(event.id), method: :delete, data: {confirm: "Sicher???"} %></td>
@@ -47,5 +47,7 @@
 
 <p>
 	<%=link_to "upcoming events ", events_path, type:"button", class:"button succsess" %>
+
+	
 </p>
  

@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
-  
   root "events#index"
+  get 'signup' => "users#new"
+  get 'logout' => "sessions#destroy"
+  get 'signin' => "sessions#new"
+  resources :sessions
+  resources :users
+  
   resources :events do
     resources :registrations
-  collection do
-    get "showall"
-end 
-end
+    collection do
+      get "showall"
+    end 
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
