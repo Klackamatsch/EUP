@@ -12,7 +12,7 @@
     	<ul>
     		<div class="right">
     			<% if current_user %>
-    			<li> <%= link_to current_user.name, edit_user_path(current_user.id) %> </li>
+    			<li> <%= link_to "<i class='fi-torso-business' ></i> #{current_user.name}".html_safe, edit_user_path(current_user.id) %> </li>
     			<li> <%= link_to "logout", logout_path %> </li>
     			<% else %>
     			<li ><%= link_to "Registrieren", signup_path %></li> |

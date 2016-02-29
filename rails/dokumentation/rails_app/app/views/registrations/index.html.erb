@@ -1,9 +1,9 @@
-<h1>Alle Registirerungen</h1>
+<h1>Alle Registirerungen für <%= @event.name %></h1>
 
 <table>
 	<tr>
-		<th>Name</th>
-		<th>Email</th>
+		<th>wer</th>
+		<th>email</th>
 		<th>Über</th>
 		<th>Event</th>
 		<th>Zeigen</th>
@@ -14,16 +14,27 @@
 
 <% @registrations.each do |registration| %>
 <tr>
-<td><%= registration.name  %></td>
-<td><%= registration.email  %></td>
+<td><%= registration.user.name %></td>
+<td><%= registration.user.email %></td>
+
 <td><%= registration.how_heard  %></td>
 <td><%= registration.event_id  %></td>
 <td>	<%= link_to 'show', event_registration_path(@event.id, registration.id )	%></td>
 <td>	</td>
-<td>	<%= link_to "Delete", events_path(@event
-.id), class:"alert button "%></td>
+<td >	<%= link_to "<i class='fi-trash icon-red'></i>".html_safe, event_registration_path( @event.id , registration.id), method: :delete, data: {confirm: "löschen? "}%></td>
 </tr>
 <%end%>
    </table> <br>
-   <%= link_to "Back", event_path(@event.id), class:"success button "%>
+
+   <ul class = "button-group even-3">
+			<li><%= link_to  "<i class='fi-arrow-left ' ></i> Zurück".html_safe, event_path(@event.id), class:"secondary button " %> </li>
+			
+			<li><%= link_to "<i class='fi-plus ' ></i> neue Registrierung".html_safe, new_event_registration_path(@event.id), class:"warning button " %></li>
+			<li><%= link_to "<i class='fi-torso-business' ></i> Profil".html_safe, user_path(current_user.id), class:"success button " %> </li>
+		</ul>
+
+
+
+
+
     
